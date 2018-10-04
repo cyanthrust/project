@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% if active.char != null %}
+    <p>Hello Boooiiii or giiiirl <a id="{{active.char.jobs}}" href="../profile/{{active.char.firstname}}-{{active.char.lastname}}">{{active.char.firstname}} {{active.char.lastname}}</a></p>
+
+    <table>
+        <tr>
+        {%if user.is_authenticated %}
+            <th>Account:</th>
+            <th>Cssssharacter:</th>
+            <th>Erstellt am:</th>
+            <th>Zuletzt eingeloggt am:</th>
+            <th>Letzte IP-Adresse:</th>
+        </tr>
+        {% endif %}
+        {% for character in characters %}
+        <tr>
+            <td>{{ character.user }}</td>
+            <td><a id="{{character.jobs}}" href="../profile/{{character.firstname}}-{{character.lastname}}">{{ character.firstname }}
+                {{ character.middlename }}
+                {{ character.lastname }}</a></td>
+            <td>{{ character.created_date }}</td>
+            <td>{{ character.last_login }}</td>
+            <td>{{ character.ip_adress }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>WHY U HERE??</p>
+{% endif %}

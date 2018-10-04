@@ -1,0 +1,17 @@
+{% if user.is_authenticated %}
+    <p>Hallo <b>{{username}}</b>, deine Chars sind: <br>{% for character in characters %} <b>{{ character.firstname }} {{character.middlename}} {{character.lastname}}</b><br> {% endfor %}</p>
+
+    {% if active.char == null %}
+        
+    {% else %}
+        <p>Dein aktiver Charakter ist {{ active.char.firstname }}</p> 
+        {{ active.char.id }}
+        {% for character in characters %} {{ character.id }} {% endfor %}
+        {{ test.id }}
+        {{ active.char }}
+    {% endif %}
+{% else %}
+<meta http-equiv="refresh" content="5; URL=\">
+{{ username }}
+{% endif %}
+

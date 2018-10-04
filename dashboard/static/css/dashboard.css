@@ -1,0 +1,20 @@
+#HM {
+    color: #256356;
+}
+
+#PT {
+    color: lightskyblue;
+}
+
+#NU {
+    color: black;
+}
+
+#MM {
+    color: gold;
+}
+
+a:link {
+    font-weight: bold;
+    text-decoration: none;
+  }
